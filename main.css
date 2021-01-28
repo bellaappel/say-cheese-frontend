@@ -1,8 +1,9 @@
+
 /* sidebar */
 
 .sidenav {
     height: 100%; 
-    width: 160px; /* Set the width of the sidebar */
+    float: left;
     position: fixed; /* Fixed Sidebar (stay in place on scroll) */
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
@@ -22,3 +23,10 @@
   .sidenav-item:hover {
     color: #f1f1f1;
   }
+
+  #headshot-image-container{
+    border: 2px solid white;
+    margin-left: 180px;
+
+  }
+  

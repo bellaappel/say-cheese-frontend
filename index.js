@@ -8,5 +8,5 @@ const CONTENT = document.getElementById('content')
 const headshotsNav = document.getElementById('headshots-nav');
 const usersNav = document.getElementById('users-nav');
 
-headshotsNav.addEventListener('click', () => fetchHeadshots());
+headshotsNav.addEventListener('click', () => fetchHeadshots(), {once: true});
 usersNav.addEventListener('click', () => fetchUsers());

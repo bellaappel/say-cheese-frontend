@@ -1,5 +1,3 @@
-const { threadId } = require("worker_threads");
-
 class Headshot{
     constructor(id, image_src ,caption, user_id){
         this.id= id
@@ -7,23 +5,30 @@ class Headshot{
         this.caption = caption 
         this.user_id = user_id
     }
-
-    showHeadshot() {
-        CONTENT.innerHTML = '';
-        const headshotContainer = document.createElement('div');
-        headshotContainer.innerHTML += `${this.image_src}`;
-        fetch(`${BASEURL}/headshots/${this.id}`)
-        .then(resp => resp.json())
-        CONTENT.appendChild(headshotContainer);
-    }
-
-    renderHeadshot() {
-        CONTENT.innerHTML = '';
-        const headshotContainer = document.createElement('div');
-        headshotContainer.innerHTML += `${this.image_src}`;
-        headshotContainer.className += 'headshot'
-        CONTENT.appendChild(headshotContainer);
-        headshotContainer.addEventListener('click', () => this.showHeadshot());
-    }
 }
+const imgUrl = 'http://127.0.0.1:3000/headshots'
+
+function fetchHeadshots() {
+    fetch(imgUrl)
+    .then(function(resp){
+        return resp.json()
+    })
+    .then(function(json){
+        showHeadshots(json)
+        console.log(json)
+    })
+}    
+
+function showHeadshots(imgArray) {
+    const container = document.getElementById('headshot-image-container')
+    imgArray.forEach(image => {
+        const img = document.createElement('img')
+        console.log(image)
+        img.src = image.image_src
+        img.style = "max-width: 25%"
+        container.appendChild(img)
+    })
+}
+
+   
 
