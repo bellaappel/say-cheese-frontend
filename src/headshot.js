@@ -20,24 +20,39 @@ function fetchHeadshots() {
 }    
 
 function showHeadshots(imgArray) {
-    const container = document.getElementById('headshot-image-container')
     imgArray.forEach(image => {
+        const container = document.createElement('div')
+        container.classList += "headshot-wrapper"
+        CONTENT.appendChild(container)
         const img = document.createElement('img')
         // console.log(image)
         img.src = image.image_src
         img.style = "max-width: 25%"
-        container.appendChild(img)
+        container.appendChild(img) 
+        attachTheaterMasks(container)  
     })
 }
 
-class Glyph{
-    constructor(glyph)
+function attachTheaterMasks(parentElement) {
+    const checkboxContainer = document.createElement('div')
+    checkboxContainer.classList += "checkbox-wrapper"
+    parentElement.appendChild(checkboxContainer)
+
+    const comedyCheck = document.createElement("INPUT")
+    comedyCheck.setAttribute("type","checkbox")
+    checkboxContainer.appendChild(comedyCheck)
+    const comedyGlyph = document.createElement("img")
+    comedyGlyph.src ="https://img.icons8.com/office/40/000000/comedy.png"
+    checkboxContainer.appendChild(comedyGlyph)
+    
+    const dramaCheck = document.createElement("INPUT")
+    dramaCheck.setAttribute("type","checkbox")
+    checkboxContainer.appendChild(dramaCheck)
+    const dramaGlyph = document.createElement("img")
+    dramaGlyph.src = "https://img.icons8.com/office/40/000000/drama.png"
+    checkboxContainer.appendChild(dramaGlyph)
 }
 
-function displayCheckBox() {
-
-}
 
 
-   
 

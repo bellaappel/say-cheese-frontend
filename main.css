@@ -24,7 +24,7 @@
     color: #f1f1f1;
   }
 
-  #headshot-image-container{
+  .headshot-wrapper{
     border: 2px solid white;
     margin-left: 180px;
 
