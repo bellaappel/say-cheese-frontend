@@ -1,6 +1,14 @@
 
 /* sidebar */
 
+.title {
+  position: absolute;
+  top: 50%;
+  left: 55%;
+  margin-top: -50px;
+  margin-left: -50px;
+}
+
 .sidenav {
     height: 100%; 
     float: left;
@@ -34,5 +42,10 @@
       border: 2px solid white;
       margin-left: 200px;
       margin-right: 200px;
+  }
+
+  .cheese{
+    width: 100px;
+    height: 100px;
   }
   
