@@ -38,6 +38,11 @@
 
   }
 
+  .user-wrapper{
+    border: 2px solid white;
+    margin-left:180px;
+  }
+
   .h1{
       border: 2px solid white;
       margin-left: 200px;
